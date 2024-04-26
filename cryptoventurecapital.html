@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Investment Company Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('impressive_background_image.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #007bff;
+        }
+
+        nav a:hover {
+            background-color: #0056b3;
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        section {
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        select, input[type="number"], button {
+            margin-bottom: 10px;
+            padding: 5px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .transaction {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Crypto Investment Company Dashboard</h1>
+    </header>
+    
+    <nav>
+        <a href="#">Portfolio</a>
+        <a href="#">Transactions</a>
+        <a href="#">Make a Payment</a>
+        <a href="#">Referral</a>
+    </nav>
+
+    <main>
+        <section id="portfolio">
+            <h2>Portfolio Overview</h2>
+            <!-- Display client's portfolio information here -->
+            <p>Your portfolio balance: $5,000</p>
+        </section>
+
+        <section id="transactions">
+            <h2>Recent Transactions</h2>
+            <!-- Display recent transactions history here -->
+            <div class="transaction">Bought 1 Bitcoin - $50,000</div>
+            <div class="transaction">Sold 2 Ethereum - $6,000</div>
+            <div class="transaction">Bought 5 Ripple - $500</div>
+        </section>
+
+        <section id="payment">
+            <h2>Make a Payment</h2>
+            <p>Select cryptocurrency:</p>
+            <select id="cryptoSelect">
+                <option value="bitcoin">Bitcoin</option>
+                <option value="ethereum">Ethereum</option>
+                <option value="ripple">Ripple</option>
+                <option value="litecoin">Litecoin</option>
+                <option value="bitcoin-cash">Bitcoin Cash</option>
+            </select>
+            <p>Enter amount:</p>
+            <input type="number" id="paymentAmount" placeholder="Enter amount in USD">
+            <button id="paymentButton">Make Payment</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Crypto Investment Company. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('paymentButton').addEventListener('click', function() {
+            var cryptoSelect = document.getElementById('cryptoSelect');
+            var paymentAmount = document.getElementById('paymentAmount').value;
+
+            if (paymentAmount <= 0) {
+                alert('Please enter a valid payment amount.');
+                return;
+            }
+
+            var selectedCrypto = cryptoSelect.options[cryptoSelect.selectedIndex].value;
+
+            // Here you would implement code to process the payment
+            // For demonstration purposes, let's just log the selected cryptocurrency and amount
+            console.log('Selected cryptocurrency:', selectedCrypto);
+            console.log('Payment amount:', paymentAmount);
+
+            // You can add further functionality such as sending payment details to a server for processing
+        });
+    </script>
+</body>
+</html>
